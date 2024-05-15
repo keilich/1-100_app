@@ -1,9 +1,12 @@
 let questions = [];
 
 function submitFeedback() {
-    const feedback = document.getElementById('feedback').value;
-    if (feedback.trim() !== "") {
-        questions.push({ question: feedback, yes: 0, no: 0 });
+    const teamName = document.getElementById('team-name').value.trim();
+    const feedback = document.getElementById('feedback').value.trim();
+    
+    if (teamName !== "" && feedback !== "") {
+        questions.push({ teamName, feedback, yes: 0, no: 0 });
+        document.getElementById('team-name').value = "";
         document.getElementById('feedback').value = "";
         displayQuestions();
     }
@@ -16,10 +19,10 @@ function displayQuestions() {
         const questionItem = document.createElement('div');
         questionItem.className = 'question-item';
         questionItem.innerHTML = `
-            <div>${q.question}</div>
+            <div><strong>チーム名:</strong> ${q.teamName}</div>
+            <div><strong>自由記述:</strong> ${q.feedback}</div>
             <button class="yes" onclick="vote(${index}, 'yes')">Yes</button>
             <button class="no" onclick="vote(${index}, 'no')">No</button>
-            <div>Yes: ${q.yes}, No: ${q.no}, Yes/(Yes+No): ${(q.yes + q.no > 0 ? (q.yes / (q.yes + q.no) * 100).toFixed(2) : 0)}%</div>
         `;
         questionsList.appendChild(questionItem);
     });
@@ -31,5 +34,12 @@ function vote(index, type) {
     } else {
         questions[index].no++;
     }
-    displayQuestions();
+    displayThankYouMessage();
+}
+
+function displayThankYouMessage() {
+    document.getElementById('thank-you-message').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('thank-you-message').style.display = 'none';
+    }, 3000);
 }
