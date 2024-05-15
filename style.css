@@ -11,8 +11,12 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-textarea {
+input, textarea {
     width: 100%;
+    margin-bottom: 10px;
+}
+
+textarea {
     height: 100px;
 }
 
@@ -31,4 +35,9 @@ button {
 
 button.yes, button.no {
     margin-left: 10px;
+}
+
+#thank-you-message {
+    color: green;
+    font-weight: bold;
 }
