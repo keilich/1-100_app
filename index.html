@@ -2,17 +2,19 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>フィードバックアプリ</title>
+    <title>余興アプリ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>フィードバックアプリ</h1>
+    <h1>余興アプリ</h1>
     <div id="feedback-form">
-        <textarea id="feedback" placeholder="質問を入力してください"></textarea>
+        <input type="text" id="team-name" placeholder="チーム名">
+        <textarea id="feedback" placeholder="自由記述"></textarea>
         <button onclick="submitFeedback()">送信</button>
     </div>
     <h2>質問一覧</h2>
     <div id="questions-list"></div>
+    <div id="thank-you-message" style="display: none;">回答ありがとうございます</div>
     <script src="script.js"></script>
 </body>
 </html>
