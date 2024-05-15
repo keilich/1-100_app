@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+#feedback-form {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+}
+
+#questions-list {
+    margin-top: 20px;
+}
+
+.question-item {
+    margin-bottom: 10px;
+}
+
+button.yes, button.no {
+    margin-left: 10px;
+}
